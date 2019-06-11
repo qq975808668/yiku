@@ -1,0 +1,83 @@
+查看用户名/邮箱
+
+ git config user.name
+
+ git config user.email
+
+.创建用户名和邮箱,也可以用来修改
+
+git config --global user.name "username"
+git config --global user.email "xxx@xxx"
+
+常用git命令操作
+
+
+git add? 添加，经常用-_-|
+|
+git pull 拉代码，也能用于刷新本地仓库
+
+git branch 查看本地分支
+
+git branch -a ?查看本地分支,查看远程分支（不过更详细）
+
+git branch -avv 查看本地分支,查看远程分支（超详细）
+
+git diff xxxxx（修改的文件名） 查看修改的内容
+
+git commit -m "xxxx" 将所有添加到索引库的文件提交到本地仓库
+
+git reset HEAD <文件>..." 以取消暂存 取消存入的commit? (有添加就有取消)
+
+git reset?? xxxxxxxxxx(代表历史提交记录) 效果和取消暂存一样，让当前的状态指向某个历史提交点上
+
+git push xxxxx（远程仓库地址） 用于提交代码,将本地仓库的修改推送到远程仓库
+
+git checkout -b xxxxx 切换到xxxxx分支? 注意：如果xxxxx不存在，会创建一个这样的分支
+
+git checkout? xxxx 切换分支? 有点蛋疼-_-
+
+git branch -d xxxxx 删除本地分支,或将修改的文件恢复
+
+git push origin --delete xxxxx 删除远程分支? ， 慎用！！！
+
+git?branch?-r?-d xxxxx 删除远程分支?
+
+git rebase? 发生冲突时可用rebase 和并分支，貌似说的不对， —— 这个是合并分支用的 千万不要和 reset搞混了
+
+git merge??? 将一个或多个分支合并
+
+repo forall -c git pull? 拉取代码，去每个目录下拉取,针对有些目录文件拉不到用这个
+
+git commit --amend? 追加提交，注意，注意，注意（重要的的是说三遍）：追加提交之前，一定要去先看一下是否有别人提交过，可用git log 查看提交日志,后面再push 上去就好了！
+
+git stash 保存当前状态
+
+git reset --hard HEAD^^^^^ 领先几个提交就回退几个? reset 前面有讲
+
+git pull 再接着拉取代码
+
+git status? 看看目前提交点的位置
+
+git stash pop 拿回保存的东西
+
+git branch --set-upstream-to=(远程分支) (本地分支)?
+如果提交文件，多提交了不该提交的东西如何修改：
+
+
+git log 先看一下，你的提交是否在最前面
+
+
+git reset --soft HEAD^? 回退到我前面的提交
+
+
+git status? 查看一下
+
+
+git reset HEAD <文件>? 去掉多余的提交
+
+?
+接下来就简单了， 重新提交就醒了? good? 但一定要记住， 不能追加提交 -_-
+
+?
+repo forall -c git gc? ?压缩历史信息
+！
